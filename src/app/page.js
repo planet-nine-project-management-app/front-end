@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import './styles/home.css';
 
 const Home = () => {
@@ -75,10 +76,7 @@ const Home = () => {
           </button>
         </form>
         <br></br>
-        <div>
-          <p>Don't have an account already? <a href='/signup'>Sign Up</a></p>
-        </div>
-
+        <p>Don not have an account already?<Link href="/signup">Sign Up</Link></p>
         {error && <p className="mt-4 text-sm text-red-500 text-center">{error}</p>}
       </div>
     </div >

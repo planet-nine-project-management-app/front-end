@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Home = () => {
   const [email, setEmail] = useState('');
@@ -96,10 +97,9 @@ const Home = () => {
           </button>
         </form>
         <br></br>
-        <div>
-          <p>Account already created? <a href='/'>Login</a></p>
-        </div>
-
+        <p>
+          Account already created? <Link href="/">Login</Link>
+        </p>
         {error && <p className="mt-4 text-sm text-red-500 text-center">{error}</p>}
       </div>
     </div>

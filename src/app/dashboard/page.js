@@ -38,7 +38,7 @@ const Dashboard = () => {
     };
 
     fetchProjects();
-  }, []);  // Empty dependency array ensures this effect runs only once on page load
+  }, [router]);  // Empty dependency array ensures this effect runs only once on page load
 
   const handleLogout = async () => {
     const token = localStorage.getItem('token');
