@@ -7,23 +7,27 @@ import { useRouter } from 'next/navigation';
 const Dashboard = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
   const router = useRouter();
 
   useEffect(() => {
     const fetchProjects = async () => {
       const token = localStorage.getItem('token');
-      // Check if token exists, if not redirect to login page
-      // if (!token) {
-      //   router.push('/login');
-      //   return;
-      // }
+      if (!token) {
+        router.push('/');
+        return;
+      }
 
       try {
-        const response = await axios.get('http://localhost:3000/api/v1/projects', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/projects`,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': `Bearer ${token}`
+            }
+          });
+
         setProjects(response.data);
       } catch (error) {
         console.error('Error fetching projects:', error);
@@ -35,6 +39,27 @@ const Dashboard = () => {
 
     fetchProjects();
   }, []);  // Empty dependency array ensures this effect runs only once on page load
+
+  const handleLogout = async () => {
+    const token = localStorage.getItem('token');
+
+    try {
+      await axios.delete(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/sign_out`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`
+          }
+        }
+      );
+      localStorage.removeItem('token');
+      router.push('/');
+    } catch (err) {
+      setError(err.response.data.message);
+    }
+  };
 
   if (loading) {
     return (
@@ -50,12 +75,13 @@ const Dashboard = () => {
         <header className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold">Project Management Dashboard</h1>
           <button
-            onClick={() => router.push('/login')}
+            onClick={handleLogout}
             className="bg-blue-500 text-white px-6 py-2 rounded-md shadow-lg hover:bg-blue-600 transition duration-300"
           >
-            Login
+            Logout
           </button>
         </header>
+        {error && <div>{error}</div>}
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Projects</h2>

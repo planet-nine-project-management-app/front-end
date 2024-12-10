@@ -20,12 +20,13 @@ const Home = () => {
         {
           user: {
             email,
-            password,
+            password
           }
         },
         {
           headers: {
             'Content-Type': 'application/json',
+            'Accept': 'application/json',
           }
         }
       );
@@ -33,9 +34,7 @@ const Home = () => {
       localStorage.setItem('token', response.data.token);
       router.push('/dashboard');
     } catch (err) {
-      setError(err);
-      debugger
-      console.error('Login failed:', err);
+      setError(err.response.data.message);
     }
   };
 
