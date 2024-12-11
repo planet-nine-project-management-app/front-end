@@ -9,7 +9,7 @@ const Home = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [password_confirmation, setpassword_confirmation] = useState('');
 
   const [error, setError] = useState('');
   const router = useRouter();
@@ -23,7 +23,7 @@ const Home = () => {
           email,
           name,
           password,
-          passwordConfirmation
+          password_confirmation
         }
       });
 
@@ -78,12 +78,12 @@ const Home = () => {
           </div>
 
           <div>
-            <label htmlFor="passwordConfirmation" className="block text-sm font-medium text-black">Password Confirmation</label>
+            <label htmlFor="password_confirmation" className="block text-sm font-medium text-black">Password Confirmation</label>
             <input
-              id="passwordConfirmation"
+              id="password_confirmation"
               type="password"
-              value={passwordConfirmation}
-              onChange={(e) => setPasswordConfirmation(e.target.value)}
+              value={password_confirmation}
+              onChange={(e) => setpassword_confirmation(e.target.value)}
               required
               className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
