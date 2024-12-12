@@ -47,7 +47,8 @@ const Home = () => {
 
         {/* Right Form Section */}
         <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-8">
-          <h1 className="text-3xl font-semibold mb-6 text-right w-full">هلا! إدخال معلومات الدخول</h1>
+          <h1 className="text-3xl font-semibold  text-right w-full">!هلا، إسم التعريف</h1>
+          <p className='mb-6 text-right w-full'>الرجاء إدخال المعلومات الخاصة </p>
           <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-md">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-right">اسم التعريف</label>
@@ -84,7 +85,7 @@ const Home = () => {
 
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-600"
+              className="w-full h-[45px] py-2 px-4 bg-green-500 text-white rounded-[40px] hover:bg-green-600"
             >
               الدخول
             </button>
@@ -95,7 +96,7 @@ const Home = () => {
           {error && <p className="mt-4 text-sm text-red-500 text-center">{error}</p>}
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
