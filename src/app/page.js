@@ -96,9 +96,9 @@ const Dashboard = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      <Sidebar />
+      {/* <Sidebar /> */}
 
-      <div className="flex-1 flex flex-col bg-white rounded-lg shadow-lg m-4 p-6">
+      <div className="flex-1 flex flex-col bg-white rounded-1.5rem shadow-lg m-4 p-6">
         <header className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold">Project Management Dashboard</h1>
           <button
@@ -114,7 +114,7 @@ const Dashboard = () => {
         {/* Graph Section */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Project Status Overview</h2>
-          <div className="bg-gray-100 p-4 rounded-lg shadow">
+          <div className="bg-gray-100 p-4 rounded-1.5rem shadow">
             <PieChart projects={projects} />
           </div>
         </section>

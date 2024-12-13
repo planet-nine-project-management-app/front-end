@@ -22,7 +22,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="flex flex-col w-64 bg-gray-800 text-white min-h-screen p-6 rounded-lg shadow-lg">
+    <div className="flex flex-col w-64 bg-gray-800 text-white min-h-screen p-6 rounded-1.5rem shadow-lg">
       <h2 className="text-2xl font-bold mb-8">Project Dashboard</h2>
       <nav className="flex flex-col space-y-4">
         <Link href="/dashboard" className="block py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded">

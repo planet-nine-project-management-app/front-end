@@ -37,7 +37,7 @@ const ForgotPassword = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen p-4">
-      <div className="flex flex-col md:flex-row w-full max-w-5xl bg-white rounded-lg shadow-lg overflow-hidden" style={{ height: 'calc(-250px + 95vh);' }}>
+      <div className="flex flex-col md:flex-row w-full max-w-5xl bg-white rounded-1.5rem shadow-lg overflow-hidden" style={{ height: 'calc(-250px + 95vh);' }}>
         <div className="hidden md:flex w-full md:w-1/2 bg-cover bg-center" style={{ backgroundImage: 'url(login-page-image.png)' }}></div>
         <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-8">
           <h1 className="text-2xl font-semibold mb-6 text-right">نسيت كلمة السر؟</h1>

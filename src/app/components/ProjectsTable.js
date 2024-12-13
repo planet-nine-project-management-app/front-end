@@ -2,9 +2,9 @@ import React from 'react';
 
 const ProjectsTable = ({ projects, sortedColumn, sortOrder, handleSort }) => {
   return (
-    <section className="bg-white p-6 rounded-lg shadow-lg">
+    <section className="bg-white p-6 rounded-1.5rem shadow-lg">
       <h2 className="text-2xl font-semibold mb-6">Projects</h2>
-      <table className="w-full border-collapse border border-gray-200 rounded-lg shadow-sm">
+      <table className="w-full border-collapse border border-gray-200 rounded-1.5rem shadow-sm">
         <thead className="bg-gray-100">
           <tr>
             {['name', 'company_id', 'start_date', 'end_date', 'status'].map((column) => (
