@@ -1,4 +1,3 @@
-// Dashboard.js
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -89,40 +88,42 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
         <div className="text-xl text-gray-600">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen bg-gray-50">
       <Sidebar />
 
-      <div className="flex-1 bg-gray-100 text-black">
-        <div className="max-w-7xl mx-auto p-4">
-          <header className="flex justify-between items-center mb-8">
-            <h1 className="text-4xl font-bold">Project Management Dashboard</h1>
-            <button
-              onClick={handleLogout}
-              className="bg-blue-500 text-white px-6 py-2 rounded-md shadow-lg hover:bg-blue-600 transition duration-300"
-            >
-              Logout
-            </button>
-          </header>
+      <div className="flex-1 flex flex-col bg-white rounded-lg shadow-lg m-4 p-6">
+        <header className="flex justify-between items-center mb-8">
+          <h1 className="text-4xl font-bold">Project Management Dashboard</h1>
+          <button
+            onClick={handleLogout}
+            className="bg-blue-500 text-white px-6 py-2 rounded-md shadow-lg hover:bg-blue-600 transition duration-300"
+          >
+            Logout
+          </button>
+        </header>
 
-          {error && <div className="text-red-500">{error}</div>}
+        {error && <div className="text-red-500 mb-4">{error}</div>}
 
-          {/* Graph Section */}
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Project Status Overview</h2>
+        {/* Graph Section */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Project Status Overview</h2>
+          <div className="bg-gray-100 p-4 rounded-lg shadow">
             <PieChart projects={projects} />
-          </section>
+          </div>
+        </section>
 
-          {/* Filters Section */}
-          <Filters filters={filters} handleFilterChange={handleFilterChange} />
+        {/* Filters Section */}
+        <Filters filters={filters} handleFilterChange={handleFilterChange} />
 
-          {/* Projects Table */}
+        {/* Projects Table */}
+        <div className="mt-8">
           <ProjectsTable
             projects={sortedProjects}
             sortedColumn={sortedColumn}

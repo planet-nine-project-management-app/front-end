@@ -17,48 +17,35 @@ const Sidebar = () => {
     }
   }, []);
 
-  // If user is authenticated, render the sidebar
   if (!isAuthenticated) {
-    return null; // Or redirect to login page or show a different component
+    return null;
   }
 
   return (
-    <div className="flex flex-col w-64 bg-gray-800 text-white h-screen p-4">
-      <h2 className="text-2xl font-semibold mb-8">Project Dashboard</h2>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/dashboard" className="block py-2 px-4 hover:bg-gray-700 rounded">
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link href="/projects" className="block py-2 px-4 hover:bg-gray-700 rounded">
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link href="/users" className="block py-2 px-4 hover:bg-gray-700 rounded">
-              Users
-            </Link>
-          </li>
-          <li>
-            <Link href="/settings" className="block py-2 px-4 hover:bg-gray-700 rounded">
-              Settings
-            </Link>
-          </li>
-          <li>
-            <button
-              onClick={() => {
-                localStorage.removeItem('token');
-                router.push('/');
-              }}
-              className="block py-2 px-4 mt-4 bg-red-600 hover:bg-red-700 rounded text-white"
-            >
-              Logout
-            </button>
-          </li>
-        </ul>
+    <div className="flex flex-col w-64 bg-gray-800 text-white min-h-screen p-6 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold mb-8">Project Dashboard</h2>
+      <nav className="flex flex-col space-y-4">
+        <Link href="/dashboard" className="block py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded">
+          Dashboard
+        </Link>
+        <Link href="/projects" className="block py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded">
+          Projects
+        </Link>
+        <Link href="/users" className="block py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded">
+          Users
+        </Link>
+        <Link href="/settings" className="block py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded">
+          Settings
+        </Link>
+        <button
+          onClick={() => {
+            localStorage.removeItem('token');
+            router.push('/');
+          }}
+          className="block py-2 px-4 mt-8 bg-red-600 hover:bg-red-500 rounded text-white"
+        >
+          Logout
+        </button>
       </nav>
     </div>
   );

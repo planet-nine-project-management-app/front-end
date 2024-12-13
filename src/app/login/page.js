@@ -39,13 +39,9 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#F5F5DC] p-4">
-      <div className="flex flex-col md:flex-row w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden">
-        {/* Left Image Section */}
-        <div className="hidden md:flex w-full md:w-1/2 bg-cover bg-center" style={{ backgroundImage: 'url(login-page-image.png)' }}>
-        </div>
-
-        {/* Right Form Section */}
+    <div className="flex justify-center items-center min-h-screen p-4">
+      <div className="flex flex-col md:flex-row w-full max-w-5xl bg-white rounded-lg shadow-lg overflow-hidden" style={{ height: 'calc(-250px + 95vh);' }}>
+        <div className="hidden md:flex w-full md:w-1/2 bg-cover bg-center" style={{ backgroundImage: 'url(login-page-image.png)' }}></div>
         <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-8">
           <h1 className="text-3xl font-semibold  text-right w-full">!هلا، إسم التعريف</h1>
           <p className='mb-6 text-right w-full'>الرجاء إدخال المعلومات الخاصة </p>
@@ -77,22 +73,19 @@ const Home = () => {
             </div>
 
             <div className="flex justify-between items-center">
+              <Link href="/forgot-password" className="text-sm text-green-600 hover:underline">نسيت كلمة السر</Link>
               <label className="text-sm">
                 <input type="checkbox" className="mr-2" /> تذكر
               </label>
-              <Link href="/forgot-password" className="text-sm text-green-600 hover:underline">نسيت كلمة السر</Link>
             </div>
 
             <button
               type="submit"
-              className="w-full h-[45px] py-2 px-4 bg-green-500 text-white rounded-[40px] hover:bg-green-600"
+              className="w-full h-[50px] py-2 px-4 bg-green-400 text-white rounded-[40px] hover:bg-green-300"
             >
               الدخول
             </button>
           </form>
-          <p className="mt-4 text-sm text-center">
-            ليس لديك حساب؟ <Link href="/signup" className="text-green-600 hover:underline">إشترك</Link>
-          </p>
           {error && <p className="mt-4 text-sm text-red-500 text-center">{error}</p>}
         </div>
       </div>
