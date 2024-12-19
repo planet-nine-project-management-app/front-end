@@ -1,9 +1,31 @@
+'use client';
+
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 
 const ProjectsPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef(null);
+
+  // Close modal if clicking outside it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsModalOpen(false);
+      }
+    };
+    if (isModalOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isModalOpen]);
+
   return (
-    <div className="flex justify-center items-center min-h-screen p-4 bg-[#F5F5DC]">
-      <div className="w-[75%] bg-white rounded-1.5rem shadow-lg overflow-hidden" style={{ height: 'calc(-90px + 80vh);' }}>
+    <div className="flex justify-center items-center min-h-screen p-4 bg-[#F5F5DC] relative">
+      {/* Main Content */}
+      <div className="relative w-[75%] bg-white rounded-1.5rem shadow-lg overflow-hidden" style={{ height: 'calc(-90px + 80vh);' }}>
         <main className="flex flex-col items-center justify-center w-full">
           <div
             className="w-full h-[800px] md:h-[850px] bg-cover bg-center rounded-1.5rem shadow-lg"
@@ -20,24 +42,18 @@ const ProjectsPage = () => {
                       <span className="text-white">هلا اسم التعريف</span>
                     </button>
                   </div>
-                  <nav className="flex space-x-4 text-right">
-                    <Link href="/" className="hover:underline text-gray-200">
-                      داشبور
-                    </Link>
-                    <Link href="/management" className="hover:underline text-gray-200">
-                      لوحات الإدارة
-                    </Link>
-                    <Link href="/logout" className="hover:underline text-gray-200">
-                      الخروج
-                    </Link>
-                    <Link href="/projects" className="hover:underline text-white">
-                      المشاريع
-                    </Link>
-                  </nav>
+                  {/* Menu Icon */}
+                  <button
+                    onClick={() => setIsModalOpen(!isModalOpen)}
+                    className="text-white text-2xl hover:text-green-500 transition duration-300"
+                  >
+                    ☰
+                  </button>
                 </div>
               </div>
             </header>
             <div className="flex items-center mt-4 justify-center space-x-4">
+              {/* Project Cards */}
               <div className="h-[180px] hidden md:flex flex-col text-right justify-center w-1/4 p-8 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300">
                 <h2 className="text-lg font-semibold">المشروع الثالث</h2>
                 <button className="text-green-500 mt-4">{'←'}</button>
@@ -56,8 +72,43 @@ const ProjectsPage = () => {
             </div>
           </div>
         </main>
+
+        {/* Modal and Overlay */}
+        {isModalOpen && (
+          <>
+            {/* Overlay */}
+            <div className="fixed inset-0 bg-black bg-opacity-50 z-10"></div>
+
+            {/* Modal */}
+            <div
+              ref={modalRef}
+              className="absolute top-0 right-0 w-[250px] h-full bg-green-500 text-white flex flex-col p-6 rounded-1.5rem z-20"
+            >
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="self-end text-white text-2xl hover:text-gray-200 transition duration-300"
+              >
+                ✕
+              </button>
+              <nav className="mt-8 space-y-4 text-lg">
+                <Link href="/projects" className="block hover:underline">
+                  المشاريع
+                </Link>
+                <Link href="/" className="block hover:underline">
+                  داشبورد
+                </Link>
+                <Link href="/management" className="block hover:underline">
+                  لوحات الإدارة
+                </Link>
+                <Link href="/logout" className="block hover:underline">
+                  الخروج
+                </Link>
+              </nav>
+            </div>
+          </>
+        )}
       </div>
-    </div >
+    </div>
   );
 };
 
