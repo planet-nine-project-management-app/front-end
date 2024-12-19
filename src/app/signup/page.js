@@ -37,7 +37,7 @@ const Home = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-background bg-white p-4">
-      <div className="w-full max-w-md bg-white rounded-lg custom-shadow-lg p-8 shadow-t-lg">
+      <div className="w-full max-w-md bg-white rounded-1.5rem custom-shadow-lg p-8 shadow-t-lg">
         <h1 className="text-2xl font-semibold text-black text-center mb-6">Sign Up</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

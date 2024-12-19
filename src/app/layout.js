@@ -1,5 +1,4 @@
 import localFont from 'next/font/local';
-import Sidebar from './components/Sidebar'; // Import the Sidebar component
 import './globals.css';
 
 const geistSans = localFont({
@@ -22,13 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`bg-[#F5F5DC] ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="flex">
-          {/* Conditionally render Sidebar based on authentication */}
-          <Sidebar />
-
           <div className="flex-1 p-4">
-            {/* Page Content */}
             {children}
           </div>
         </div>
