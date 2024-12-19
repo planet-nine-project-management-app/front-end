@@ -41,8 +41,11 @@ const Home = () => {
   return (
     <div className="flex justify-center items-center min-h-screen p-4">
       <div className="flex flex-col md:flex-row w-[75%] bg-white rounded-1.5rem shadow-lg overflow-hidden" style={{ height: 'calc(-90px + 80vh);' }}>
-        <div className="hidden justify-center md:flex w-full md:w-1/2 bg-cover bg-center" style={{ backgroundImage: 'url(cover-photo.png)' }}>
-          <div className="">
+        <div
+          className="hidden justify-center md:flex w-full md:w-1/2 bg-cover bg-center items-end"
+          style={{ backgroundImage: 'url(cover-photo.png)' }}
+        >
+          <div className="mb-8">
             <img
               src="hail-region-logo.png"
               alt="Logo"
@@ -50,6 +53,7 @@ const Home = () => {
             />
           </div>
         </div>
+
         <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-20">
           <h1 className="text-[2.25rem] leading-[4.5rem] font-semibold text-gray-600 text-right w-full">!أهلا، إسم التعريف</h1>
           <p className='mb-6 text-right w-full text-[25px] font-bold text-gray-500'>الرجاء إدخال المعلومات الخاصة </p>

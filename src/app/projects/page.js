@@ -28,7 +28,7 @@ const ProjectsPage = () => {
         <main className="flex flex-col items-center justify-center w-full">
           <div
             className="w-full h-[800px] md:h-[850px] bg-cover bg-center rounded-1.5rem shadow-lg"
-            style={{ backgroundImage: 'url(/projects.png)' }}
+            style={{ backgroundImage: 'url(/cover-photo.png)' }}
           >
             <header className="w-[90%] flex justify-between mx-auto items-center h-[100px]">
               <div className="w-[100%]">
