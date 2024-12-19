@@ -3,14 +3,14 @@ import Link from 'next/link';
 const ProjectsPage = () => {
   return (
     <div className="flex justify-center items-center min-h-screen p-4 bg-[#F5F5DC]">
-      <div className="w-full max-w-5xl bg-white rounded-1.5rem shadow-lg overflow-hidden">
+      <div className="w-[75%] bg-white rounded-1.5rem shadow-lg overflow-hidden" style={{ height: 'calc(-90px + 80vh);' }}>
         <main className="flex flex-col items-center justify-center w-full">
           <div
-            className="w-full h-[800px] md:h-[600px] bg-cover bg-center rounded-1.5rem shadow-lg"
+            className="w-full h-[800px] md:h-[850px] bg-cover bg-center rounded-1.5rem shadow-lg"
             style={{ backgroundImage: 'url(/projects.png)' }}
           >
-            <header className="w-full flex justify-between items-center px-8 py-4">
-              <div className="w-[95%] mx-auto border-b border-white">
+            <header className="w-full flex justify-between items-center h-[150px]">
+              <div className="w-[95%] mx-auto border-b pb-[20px] border-white">
                 <div className="flex justify-between mb-4 items-center">
                   <div className="flex items-center space-x-4">
                     <button className="group flex items-center justify-center w-10 h-10 text-white rounded-full border-solid overflow-hidden transition-all duration-300 hover:w-60 border-[1px] border-white">
@@ -37,18 +37,18 @@ const ProjectsPage = () => {
                 </div>
               </div>
             </header>
-            <div className="flex items-center justify-center h-full space-x-4">
-              <div className="hidden md:flex flex-col text-right justify-center w-1/4 p-8 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300">
+            <div className="flex items-center mt-4 justify-center space-x-4">
+              <div className="h-[180px] hidden md:flex flex-col text-right justify-center w-1/4 p-8 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300">
                 <h2 className="text-lg font-semibold">المشروع الثالث</h2>
                 <button className="text-green-500 mt-4">{'←'}</button>
                 <p className="text-sm">الوصف</p>
               </div>
-              <div className="flex flex-col text-right justify-center w-1/4 bg-white p-8 rounded-1.5rem shadow-md hover:bg-gray-100 transition duration-300 hover:cursor-pointer">
+              <div className="h-[180px] flex flex-col text-right justify-center w-1/4 bg-white p-8 rounded-1.5rem shadow-md hover:bg-gray-100 transition duration-300 hover:cursor-pointer">
                 <h2 className="text-lg font-semibold">المشروع الثاني</h2>
                 <p className="text-sm">الوصف</p>
                 <button className="text-green-500 mt-4">{'←'}</button>
               </div>
-              <div className="hidden md:flex flex-col text-right justify-center w-1/4 p-8 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300">
+              <div className="h-[180px] hidden md:flex flex-col text-right justify-center w-1/4 p-8 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300">
                 <h2 className="text-lg font-semibold">مشروع التميز المؤسسي</h2>
                 <p className="text-sm">الوصف</p>
                 <button className="text-green-500 mt-4">{'←'}</button>
@@ -57,7 +57,7 @@ const ProjectsPage = () => {
           </div>
         </main>
       </div>
-    </div>
+    </div >
   );
 };
 
