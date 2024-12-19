@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen p-4">
-      <div className="flex flex-col md:flex-row w-[75%] bg-white rounded-1.5rem shadow-lg overflow-hidden" style={{ height: 'calc(-90px + 80vh);' }}>
+      <div className="flex flex-col md:flex-row w-[75%] bg-white rounded-1.5rem shadow-lg overflow-hidden" style={{ height: 'calc(-90px + 80vh)' }}>
         <div
           className="hidden justify-center md:flex w-full md:w-1/2 bg-cover bg-center items-end"
           style={{ backgroundImage: 'url(cover-photo.png)' }}

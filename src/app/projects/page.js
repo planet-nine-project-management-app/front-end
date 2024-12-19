@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 const ProjectsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
   const modalRef = useRef(null);
 
   // Close modal if clicking outside it
@@ -22,9 +24,15 @@ const ProjectsPage = () => {
     };
   }, [isModalOpen]);
 
+  const handleLogout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem('token');
+    router.push('/login')
+  }
+
   return (
     <div className="flex justify-center items-center min-h-screen p-4 bg-[#F5F5DC] relative">
-      <div className="relative w-[75%] bg-white rounded-1.5rem shadow-lg overflow-hidden" style={{ height: 'calc(-90px + 80vh);' }}>
+      <div className="relative w-[75%] bg-white rounded-1.5rem shadow-lg overflow-hidden" style={{ height: 'calc(-90px + 80vh)' }}>
         <main className="flex flex-col items-center justify-center w-full">
           <div
             className="w-full h-[800px] md:h-[850px] bg-cover bg-center rounded-1.5rem shadow-lg"
@@ -107,7 +115,6 @@ const ProjectsPage = () => {
           </div>
         </main>
 
-        {/* Modal and Overlay */}
         {
           isModalOpen && (
             <>
@@ -140,7 +147,7 @@ const ProjectsPage = () => {
                   <Link href="/management" className="no-underline leading-[5rem] text-[30px] text-gray-300 font-semibold  block hover:underline">
                     لوحات الإدارة
                   </Link>
-                  <Link href="/logout" className="no-underline leading-[5rem] text-[30px] text-gray-300 font-semibold  block hover:underline">
+                  <Link onClick={handleLogout} href='#' className="no-underline leading-[5rem] text-[30px] text-gray-300 font-semibold  block hover:underline">
                     الخروج
                   </Link>
                 </nav>
