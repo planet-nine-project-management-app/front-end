@@ -31,9 +31,9 @@ const ProjectsPage = () => {
             className="w-full h-[800px] md:h-[850px] bg-cover bg-center rounded-1.5rem shadow-lg"
             style={{ backgroundImage: 'url(/projects.png)' }}
           >
-            <header className="w-full flex justify-between items-center h-[150px]">
-              <div className="w-[95%] mx-auto border-b pb-[20px] border-white">
-                <div className="flex justify-between mb-4 items-center">
+            <header className="w-[90%] flex justify-between mx-auto items-center h-[100px]">
+              <div className="w-[100%]">
+                <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-4">
                     <button className="group flex items-center justify-center w-10 h-10 text-white rounded-full border-solid overflow-hidden transition-all duration-300 hover:w-60 border-[1px] border-white">
                       <span className="opacity-0 ml-2 text-white transition-opacity duration-300 group-hover:opacity-100">البحث</span>
@@ -52,63 +52,97 @@ const ProjectsPage = () => {
                 </div>
               </div>
             </header>
-            <div className="flex items-center mt-4 justify-center space-x-4">
-              {/* Project Cards */}
-              <div className="h-[180px] hidden md:flex flex-col text-right justify-center w-1/4 p-8 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300">
-                <h2 className="text-lg font-semibold">المشروع الثالث</h2>
-                <button className="text-green-500 mt-4">{'←'}</button>
-                <p className="text-sm">الوصف</p>
+            <div className="border-t border-white w-[90%] mx-auto mb-12"></div>
+            <div className="flex items-center justify-between w-[90%] mx-auto mt-4 space-x-4">
+              <div className="h-[190px] text-right w-[30%] p-4 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300 flex flex-col justify-between">
+                <div>
+                  <h2 className="text-lg font-semibold text-[25px]">المشروع الثالث</h2>
+                </div>
+                <div className="flex justify-between items-center">
+                  <button className="w-[40px] h-[40px] bg-gray-300 rounded-full text-[30px] flex justify-center items-end">
+                    {'←'}
+                  </button>
+                  <p className="text-[20px] font-semibold">الوصف</p>
+                </div>
               </div>
-              <div className="h-[180px] flex flex-col text-right justify-center w-1/4 bg-white p-8 rounded-1.5rem shadow-md hover:bg-gray-100 transition duration-300 hover:cursor-pointer">
-                <h2 className="text-lg font-semibold">المشروع الثاني</h2>
-                <p className="text-sm">الوصف</p>
-                <button className="text-green-500 mt-4">{'←'}</button>
+              <div className="h-[190px] text-right w-[30%] p-4 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300 flex flex-col justify-between">
+                <div>
+                  <h2 className="text-lg font-semibold text-[25px]">المشروع الثاني</h2>
+                </div>
+                <div className="flex justify-between items-center">
+                  <button className="w-[40px] h-[40px] bg-gray-300 rounded-full text-[30px] flex justify-center items-end">
+                    {'←'}
+                  </button>
+                  <p className="text-[20px] font-semibold">الوصف</p>
+                </div>
               </div>
-              <div className="h-[180px] hidden md:flex flex-col text-right justify-center w-1/4 p-8 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300">
-                <h2 className="text-lg font-semibold">مشروع التميز المؤسسي</h2>
-                <p className="text-sm">الوصف</p>
-                <button className="text-green-500 mt-4">{'←'}</button>
+              <div className="h-[190px] text-right w-[30%] p-4 rounded-1.5rem border-[1px] border-white bg-white border-solid text-black hover:cursor-pointer transition duration-300 flex flex-col justify-between">
+                <div>
+                  <h2 className="text-lg font-semibold text-[25px]">مشروع التميز المؤسسي</h2>
+                </div>
+                <div className="flex justify-between items-center">
+                  <button className="w-[40px] h-[40px] bg-green-400 text-white font-bold rounded-full text-[30px] flex justify-center items-end">
+                    {'←'}
+                  </button>
+                  <p className="text-[20px] font-semibold">الوصف</p>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-white w-[90%] mx-auto my-4 mt-12 mb-16"></div>
+            <div className='flex justify-between mt-8 w-[90%] mx-auto'>
+              <div className='flex'>
+                <div><p className="text-white text-[25px] pt-4 border-b-[2px] border-white border-solid pb-4">تفاصيل الانجاز</p></div>
+                <div className="w-16 h-16 bg-green-500 border-[15px] border-white rounded-full ml-[20px] mt-[10px]"></div>
+              </div>
+              <div className='flex'>
+                <p className='text-[21px] text-gray-500 w-[290px] text-right pt-4 mr-8'>وصف مختصر عن المشروع يمكن ان يمتد على أكثر من سطر بالشكل التالي</p>
+                <h1 className='text-[50px] font-bold w-[300px] text-right'>مشروع التميز المؤسسي</h1>
               </div>
             </div>
           </div>
         </main>
 
         {/* Modal and Overlay */}
-        {isModalOpen && (
-          <>
-            {/* Overlay */}
-            <div className="fixed inset-0 bg-black bg-opacity-50 z-10"></div>
+        {
+          isModalOpen && (
+            <>
+              {/* Overlay */}
+              <div className="fixed inset-0 bg-black bg-opacity-50 z-10"></div>
 
-            {/* Modal */}
-            <div
-              ref={modalRef}
-              className="absolute top-0 right-0 w-[250px] h-full bg-green-500 text-white flex flex-col p-6 rounded-1.5rem z-20"
-            >
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="self-end text-white text-2xl hover:text-gray-200 transition duration-300"
+              {/* Modal */}
+              <div
+                ref={modalRef}
+                className="absolute top-0 right-0 w-[350px] h-full bg-green-500 text-white flex flex-col p-6 z-20"
               >
-                ✕
-              </button>
-              <nav className="mt-8 space-y-4 text-lg">
-                <Link href="/projects" className="block hover:underline">
-                  المشاريع
-                </Link>
-                <Link href="/" className="block hover:underline">
-                  داشبورد
-                </Link>
-                <Link href="/management" className="block hover:underline">
-                  لوحات الإدارة
-                </Link>
-                <Link href="/logout" className="block hover:underline">
-                  الخروج
-                </Link>
-              </nav>
-            </div>
-          </>
-        )}
-      </div>
-    </div>
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="self-end text-white text-2xl hover:text-gray-200 transition duration-300"
+                >
+                  ✕
+                </button>
+
+                {/* Navigation Menu */}
+                <nav className="mt-12 text-right space-y-6 text-lg">
+                  <Link href="/projects" className="block hover:underline">
+                    المشاريع
+                  </Link>
+                  <Link href="/" className="block hover:underline">
+                    داشبورد
+                  </Link>
+                  <Link href="/management" className="block hover:underline">
+                    لوحات الإدارة
+                  </Link>
+                  <Link href="/logout" className="block hover:underline">
+                    الخروج
+                  </Link>
+                </nav>
+              </div>
+            </>
+          )
+        }
+      </div >
+    </div >
   );
 };
 
