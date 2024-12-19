@@ -96,8 +96,6 @@ const Dashboard = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      {/* <Sidebar /> */}
-
       <div className="flex-1 flex flex-col bg-white rounded-1.5rem shadow-lg m-4 p-6">
         <header className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold">Project Management Dashboard</h1>

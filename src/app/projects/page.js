@@ -24,7 +24,6 @@ const ProjectsPage = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen p-4 bg-[#F5F5DC] relative">
-      {/* Main Content */}
       <div className="relative w-[75%] bg-white rounded-1.5rem shadow-lg overflow-hidden" style={{ height: 'calc(-90px + 80vh);' }}>
         <main className="flex flex-col items-center justify-center w-full">
           <div
