@@ -58,19 +58,19 @@ const ForgotPassword = () => {
 
             <button
               type="submit"
-              className="w-full h-[45px] py-2 px-4 bg-green-500 text-white rounded-[40px] hover:bg-green-600"
+              className="w-full h-[45px] py-2 px-4 bg-primary text-white rounded-[40px] hover:bg-primary"
             >
               إرسال التعليمات
             </button>
           </form>
 
-          {successMessage && <p className="mt-4 text-sm text-green-600 text-center">{successMessage}</p>}
+          {successMessage && <p className="mt-4 text-sm text-[#10ad76] text-center">{successMessage}</p>}
           {error && <p className="mt-4 text-sm text-red-500 text-center">{error}</p>}
 
           <p className="mt-4 text-sm text-center">
             <a
               onClick={() => router.push('/login')}
-              className="text-green-600 hover:underline cursor-pointer"
+              className="text-[#10ad76] hover:underline cursor-pointer"
             >
               العودة إلى تسجيل الدخول
             </a>

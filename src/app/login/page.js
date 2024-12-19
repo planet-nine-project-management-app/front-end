@@ -81,7 +81,7 @@ const Home = () => {
 
             <button
               type="submit"
-              className="w-full h-[80px] font-bold py-2 px-4 bg-green-400 text-white rounded-[40px] hover:bg-green-300 mt-4"
+              className="w-full h-[80px] font-bold py-2 px-4 bg-primary text-white rounded-[40px] hover:bg-primary mt-4"
             >
               الدخول
             </button>

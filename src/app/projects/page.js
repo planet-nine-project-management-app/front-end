@@ -38,17 +38,23 @@ const ProjectsPage = () => {
                     <button className="group flex items-center justify-center w-10 h-10 text-white rounded-full border-solid overflow-hidden transition-all duration-300 hover:w-60 border-[1px] border-white">
                       <span className="opacity-0 ml-2 text-white transition-opacity duration-300 group-hover:opacity-100">البحث</span>
                     </button>
-                    <button className="w-60 h-10 rounded-full bg-green-400">
+                    <button className="w-60 h-10 rounded-full bg-primary">
                       <span className="text-white">هلا اسم التعريف</span>
                     </button>
                   </div>
-                  {/* Menu Icon */}
-                  <button
-                    onClick={() => setIsModalOpen(!isModalOpen)}
-                    className="text-white text-2xl transition duration-300"
-                  >
-                    ☰
-                  </button>
+                  <div className="flex items-center space-x-4">
+                    <img
+                      src="hail-region-logo.png"
+                      alt="Logo"
+                      className="w-[270px] h-[80px]"
+                    />
+                    <button
+                      onClick={() => setIsModalOpen(!isModalOpen)}
+                      className="w-[50px] h-[50px] rounded-full bg-primary text-[25px] font-bold text-white transition duration-300"
+                    >
+                      ☰
+                    </button>
+                  </div>
                 </div>
               </div>
             </header>
@@ -81,7 +87,7 @@ const ProjectsPage = () => {
                   <h2 className="text-lg font-semibold text-[25px]">مشروع التميز المؤسسي</h2>
                 </div>
                 <div className="flex justify-between items-center">
-                  <button className="w-[40px] h-[40px] bg-green-400 text-white font-bold rounded-full text-[30px] flex justify-center items-end">
+                  <button className="w-[40px] h-[40px] bg-primary text-white font-bold rounded-full text-[30px] flex justify-center items-end">
                     {'←'}
                   </button>
                   <p className="text-[20px] font-semibold">الوصف</p>
@@ -92,7 +98,7 @@ const ProjectsPage = () => {
             <div className='flex justify-between mt-8 w-[90%] mx-auto'>
               <div className='flex'>
                 <div><p className="text-white text-[25px] pt-4 border-b-[2px] border-white border-solid pb-4">تفاصيل الانجاز</p></div>
-                <div className="w-16 h-16 bg-green-500 border-[15px] border-white rounded-full ml-[20px] mt-[10px]"></div>
+                <div className="w-16 h-16 bg-primary border-[15px] border-white rounded-full ml-[20px] mt-[10px]"></div>
               </div>
               <div className='flex'>
                 <p className='text-[21px] text-gray-500 w-[290px] text-right pt-4 mr-8'>وصف مختصر عن المشروع يمكن ان يمتد على أكثر من سطر بالشكل التالي</p>
@@ -106,34 +112,36 @@ const ProjectsPage = () => {
         {
           isModalOpen && (
             <>
-              {/* Overlay */}
               <div className="fixed inset-0 bg-black bg-opacity-50 z-10"></div>
-
-              {/* Modal */}
               <div
                 ref={modalRef}
-                className="absolute top-0 right-0 w-[400px] h-full mr-[55px] bg-green-500 text-white flex flex-col p-6 z-20"
+                className="absolute top-0 right-0 w-[400px] h-full mr-[55px] bg-primary text-white flex flex-col p-6 z-20"
               >
-                {/* Close Button */}
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="self-end text-white text-2xl hover:text-gray-200 transition duration-300"
-                >
-                  X
-                </button>
+                <div className="flex items-center justify-around space-x-4">
+                  <img
+                    src="hail-region-logo.png"
+                    alt="Logo"
+                    className="w-[250px] h-[70px]"
+                  />
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="w-[50px] mb-[10px] h-[50px] bg-white rounded-full text-[#10ad76] font-bold text-[30px] self-end hover:text-white hover:bg-primary transition duration-300"
+                  >
+                    X
+                  </button>
+                </div>
 
-                {/* Navigation Menu */}
-                <nav className="mt-12 text-right space-y-6 text-lg">
-                  <Link href="/projects" className="block hover:underline">
+                <nav className="mt-12 mr-[10px] text-right space-y-6 text-lg">
+                  <Link href="/projects" className="no-underline leading-[5rem] text-[30px] text-white font-semibold block hover:underline">
                     المشاريع
                   </Link>
-                  <Link href="/" className="block hover:underline">
+                  <Link href="/" className="no-underline leading-[5rem] text-[30px] text-gray-300 font-semibold  block hover:underline">
                     داشبورد
                   </Link>
-                  <Link href="/management" className="block hover:underline">
+                  <Link href="/management" className="no-underline leading-[5rem] text-[30px] text-gray-300 font-semibold  block hover:underline">
                     لوحات الإدارة
                   </Link>
-                  <Link href="/logout" className="block hover:underline">
+                  <Link href="/logout" className="no-underline leading-[5rem] text-[30px] text-gray-300 font-semibold  block hover:underline">
                     الخروج
                   </Link>
                 </nav>
