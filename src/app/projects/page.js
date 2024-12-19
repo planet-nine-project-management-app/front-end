@@ -45,7 +45,7 @@ const ProjectsPage = () => {
                   {/* Menu Icon */}
                   <button
                     onClick={() => setIsModalOpen(!isModalOpen)}
-                    className="text-white text-2xl hover:text-green-500 transition duration-300"
+                    className="text-white text-2xl transition duration-300"
                   >
                     ☰
                   </button>
@@ -112,14 +112,14 @@ const ProjectsPage = () => {
               {/* Modal */}
               <div
                 ref={modalRef}
-                className="absolute top-0 right-0 w-[350px] h-full bg-green-500 text-white flex flex-col p-6 z-20"
+                className="absolute top-0 right-0 w-[400px] h-full mr-[55px] bg-green-500 text-white flex flex-col p-6 z-20"
               >
                 {/* Close Button */}
                 <button
                   onClick={() => setIsModalOpen(false)}
                   className="self-end text-white text-2xl hover:text-gray-200 transition duration-300"
                 >
-                  ✕
+                  X
                 </button>
 
                 {/* Navigation Menu */}
