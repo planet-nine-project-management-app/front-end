@@ -9,7 +9,6 @@ const ProjectsPage = () => {
   const router = useRouter();
   const modalRef = useRef(null);
 
-  // Close modal if clicking outside it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -29,6 +28,10 @@ const ProjectsPage = () => {
     localStorage.removeItem('token');
     router.push('/login')
   }
+
+  // const handleProjectClick = (projectId) => {
+  //   router.push(`/projects/details?id=${projectId}`);
+  // };
 
   return (
     <div className="flex justify-center items-center min-h-screen p-4 bg-[#F5F5DC] relative">
@@ -67,17 +70,20 @@ const ProjectsPage = () => {
             </header>
             <div className="border-t border-white w-[90%] mx-auto mb-12"></div>
             <div className="flex items-center justify-between w-[90%] mx-auto mt-4 space-x-4">
-              <div className="h-[190px] text-right w-[30%] p-4 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300 flex flex-col justify-between">
-                <div>
-                  <h2 className="text-lg font-semibold text-[25px]">المشروع الثالث</h2>
+              <Link href={`/projects/details`} className="">
+                <div className="h-[190px] text-right w-[30%] p-4 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300 flex flex-col justify-between">
+                  <div>
+                    <h2 className="text-lg font-semibold text-[25px]">المشروع الثالث</h2>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <button className="w-[40px] h-[40px] bg-gray-300 rounded-full text-[30px] flex justify-center items-end">
+                      {'←'}
+                    </button>
+                    <p className="text-[20px] font-semibold">الوصف</p>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center">
-                  <button className="w-[40px] h-[40px] bg-gray-300 rounded-full text-[30px] flex justify-center items-end">
-                    {'←'}
-                  </button>
-                  <p className="text-[20px] font-semibold">الوصف</p>
-                </div>
-              </div>
+              </Link>
+
               <div className="h-[190px] text-right w-[30%] p-4 rounded-1.5rem border-[1px] border-white border-solid text-white hover:bg-gray-100 hover:text-black hover:cursor-pointer transition duration-300 flex flex-col justify-between">
                 <div>
                   <h2 className="text-lg font-semibold text-[25px]">المشروع الثاني</h2>
